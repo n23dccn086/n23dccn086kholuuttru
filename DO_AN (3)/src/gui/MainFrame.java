@@ -134,9 +134,10 @@ public class MainFrame extends JFrame {
         JButton delBtn    = new JButton("Xóa");
         JButton refreshBtn = new JButton("Làm mới");
         JButton importBtn  = new JButton("Import"); 
+        JButton statsBtn = new JButton("Thống kê");
 
         top.add(searchBtn); top.add(addBtn); top.add(editBtn); top.add(delBtn);
-        top.add(refreshBtn); top.add(importBtn); 
+        top.add(refreshBtn); top.add(importBtn);  top.add(statsBtn);
         panel.add(top, BorderLayout.NORTH);
 
         searchBtn.addActionListener(e -> searchDepartment(model));
@@ -145,7 +146,7 @@ public class MainFrame extends JFrame {
         delBtn.addActionListener(e -> deleteDepartment(model));
         refreshBtn.addActionListener(e -> loadDepartmentTable(model));
         importBtn.addActionListener(e -> importDepartmentData(model));
-
+        statsBtn.addActionListener(e -> deptMgr.statistics());
         loadDepartmentTable(model);
         return panel;
     }
@@ -597,4 +598,5 @@ public class MainFrame extends JFrame {
             });
         }
     }
+
 }
